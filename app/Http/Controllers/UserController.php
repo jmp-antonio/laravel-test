@@ -43,7 +43,7 @@ class UserController extends Controller
 
             return response()->json(['status' => 'success', 'message' => 'Saved Successfully', 'data' => $user]);
         } catch (\Exception $e) {
-            Log::error("Error in saving user", $e->getMessage());
+            Log::error("Error in saving user", [$e->getMessage()]);
             return response()->json(['status' => 'error', 'message' => "Server Error. Please check the logs"]);
         }
     }
